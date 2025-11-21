@@ -1,0 +1,416 @@
+/* Sci-Fi Universe Design System Global Styles */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for Design System */
+:root {
+  /* Primary - Cosmic Purple */
+  --color-primary-50: 243 241 255;
+  --color-primary-100: 235 229 255;
+  --color-primary-200: 217 206 255;
+  --color-primary-300: 190 166 255;
+  --color-primary-400: 159 117 255;
+  --color-primary-500: 132 61 255;
+  --color-primary-600: 121 22 255;
+  --color-primary-700: 107 4 253;
+  --color-primary-800: 90 3 212;
+  --color-primary-900: 75 5 173;
+  --color-primary-950: 44 0 118;
+
+  /* Secondary - Cyber Blue */
+  --color-secondary-50: 239 246 255;
+  --color-secondary-100: 219 234 254;
+  --color-secondary-200: 191 219 254;
+  --color-secondary-300: 147 197 253;
+  --color-secondary-400: 96 165 250;
+  --color-secondary-500: 59 130 246;
+  --color-secondary-600: 37 99 235;
+  --color-secondary-700: 29 78 216;
+  --color-secondary-800: 30 64 175;
+  --color-secondary-900: 30 58 138;
+  --color-secondary-950: 23 37 84;
+
+  /* Accent - Neon Cyan */
+  --color-accent-50: 236 254 255;
+  --color-accent-100: 207 250 254;
+  --color-accent-200: 165 243 252;
+  --color-accent-300: 103 232 249;
+  --color-accent-400: 34 211 238;
+  --color-accent-500: 6 182 212;
+  --color-accent-600: 8 145 178;
+  --color-accent-700: 14 116 144;
+  --color-accent-800: 21 94 117;
+  --color-accent-900: 22 78 99;
+  --color-accent-950: 8 51 68;
+
+  /* Neutrals - Space Grays */
+  --color-neutral-0: 255 255 255;
+  --color-neutral-50: 248 250 252;
+  --color-neutral-100: 241 245 249;
+  --color-neutral-200: 226 232 240;
+  --color-neutral-300: 203 213 225;
+  --color-neutral-400: 148 163 184;
+  --color-neutral-500: 100 116 139;
+  --color-neutral-600: 71 85 105;
+  --color-neutral-700: 51 65 85;
+  --color-neutral-800: 30 41 59;
+  --color-neutral-900: 15 23 42;
+  --color-neutral-950: 2 6 23;
+
+  /* Success - Matrix Green */
+  --color-success-500: 34 197 94;
+  --color-success-600: 22 163 74;
+
+  /* Warning - Solar Orange */
+  --color-warning-500: 249 115 22;
+  --color-warning-600: 234 88 12;
+
+  /* Error - Plasma Red */
+  --color-error-500: 239 68 68;
+  --color-error-600: 220 38 38;
+
+  /* Spacing */
+  --spacing-px: 1px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Animation Durations */
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+  --duration-700: 700ms;
+  --duration-1000: 1000ms;
+
+  /* Custom Easing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-cyber: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-quantum: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-warp: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Shadows and Glows */
+  --shadow-glow: 0 0 20px rgb(132 61 255 / 0.5);
+  --shadow-glow-cyan: 0 0 20px rgb(34 211 238 / 0.5);
+  --shadow-glow-green: 0 0 20px rgb(34 197 94 / 0.5);
+  --shadow-glow-orange: 0 0 20px rgb(249 115 22 / 0.5);
+}
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background: linear-gradient(135deg, 
+    rgb(15 23 42) 0%, 
+    rgb(30 41 59) 25%, 
+    rgb(51 65 85) 50%, 
+    rgb(30 41 59) 75%, 
+    rgb(15 23 42) 100%
+  );
+  color: rgb(255 255 255);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(30 41 59 / 0.3);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgb(132 61 255 / 0.8) 0%,
+    rgb(34 211 238 / 0.8) 100%
+  );
+  border-radius: var(--radius-full);
+  transition: background var(--duration-300);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(132 61 255) 0%,
+    rgb(34 211 238) 100%
+  );
+}
+
+/* Selection Styles */
+::selection {
+  background: rgb(132 61 255 / 0.3);
+  color: rgb(255 255 255);
+}
+
+::-moz-selection {
+  background: rgb(132 61 255 / 0.3);
+  color: rgb(255 255 255);
+}
+
+/* Utility Classes */
+.font-display {
+  font-family: 'Orbitron', ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
+}
+
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-cyan {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.glow-green {
+  box-shadow: var(--shadow-glow-green);
+}
+
+.glow-orange {
+  box-shadow: var(--shadow-glow-orange);
+}
+
+.animate-cyber {
+  animation: cyber 2s var(--ease-cyber) infinite;
+}
+
+.animate-quantum {
+  animation: quantum 3s var(--ease-quantum) infinite;
+}
+
+.animate-hologram {
+  animation: hologram 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+/* Custom Animations */
+@keyframes cyber {
+  0%, 100% {
+    transform: translateX(0);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translateX(-2px);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: translateX(2px);
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    transform: translateX(-1px);
+    filter: hue-rotate(270deg);
+  }
+}
+
+@keyframes quantum {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.02) rotate(1deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(0.98) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.01) rotate(0.5deg);
+    opacity: 0.95;
+  }
+}
+
+@keyframes hologram {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 
+      0 0 5px rgb(132 61 255 / 0.5),
+      0 0 10px rgb(132 61 255 / 0.3),
+      0 0 15px rgb(132 61 255 / 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgb(132 61 255 / 0.8),
+      0 0 20px rgb(132 61 255 / 0.5),
+      0 0 30px rgb(132 61 255 / 0.3);
+  }
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Holographic Gradient Background */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    rgb(132 61 255 / 0.1),
+    rgb(59 130 246 / 0.1),
+    rgb(34 211 238 / 0.1),
+    rgb(34 197 94 / 0.1),
+    rgb(249 115 22 / 0.1)
+  );
+  background-size: 400% 400%;
+  animation: hologram 8s ease-in-out infinite;
+}
+
+/* Grid Pattern Background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgb(132 61 255 / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(132 61 255 / 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Cyber Grid Lines */
+.cyber-lines {
+  position: relative;
+}
+
+.cyber-lines::before,
+.cyber-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgb(132 61 255 / 0.3);
+  pointer-events: none;
+}
+
+.cyber-lines::before {
+  border-left: none;
+  border-right: none;
+}
+
+.cyber-lines::after {
+  border-top: none;
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .glow,
+  .glow-cyan,
+  .glow-green,
+  .glow-orange {
+    box-shadow: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary-500: 150 100 255;
+    --color-accent-500: 50 255 255;
+    --color-neutral-800: 0 0 0;
+    --color-neutral-200: 255 255 255;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-cyber,
+  .animate-quantum,
+  .animate-hologram,
+  .animate-float,
+  .animate-glow-pulse {
+    animation: none;
+  }
+}

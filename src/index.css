@@ -1,0 +1,6 @@
+/* Import Design System Globals */
+@import './design-system/globals.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
