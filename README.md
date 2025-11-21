@@ -2,7 +2,7 @@
 
 > 🌌 **Sci-Fi Universe Edition** - A futuristic portfolio showcasing frontend expertise and AI collaboration skills.
 
-嘗試用ai 寫原本就很弱的webGL 跟 three.js，我先把需求丟給chatgpt，請他幫忙生prompt，再把prompt丟給claude，結果生出沒有美感甚至很多bugs的專案
+嘗試用ai 寫原本就很弱的webGL 跟 three.js，我先把需求丟給chatgpt，請他幫忙生prompt，再把prompt丟給claude，結果生出沒有美感甚至很多bugs的專案。相關的過程已經記錄在docs的文檔裡
 
 ## 🚀 Quick Start
 
